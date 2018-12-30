@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>图片热区工具</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./js/art-dialog/css/dialog.css">
+    <link rel="stylesheet" href="./css/hotArea.plug.css">
+    <style>
+    .toolbar {
+        border-bottom: 1px solid #ece9df;
+        margin-bottom: 20px;
+    }
+
+    .toolbar button {
+        margin: 0px 10px 15px;
+        padding: 5px 15px;
+        font-size: 14px;
+        outline: 0;
+        border-radius: 4px;
+        text-align: center;
+        color: #fff;
+        font-family: 'Microsoft Yahei';
+        background-color: #13ce66;
+        border: 1px solid #13ce66;
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <button data-img="./img/pic1.jpg" data-areas="">热区图片一</button>
+        <button data-img="./img/pic2.jpg" data-areas="">热区图片二</button>
+    </div>
+    <script src="./js/jquery.1.7.2.min.js"></script>
+    <script src="./js/drag/jquery.drag.js"></script>
+    <script src="./js/art-dialog/dialog.js"></script>
+    <script src="./js/hotArea.plug.js"></script>
+</body>
+<script>
+$(function() {
+    // 创建/编辑图片热区
+    $('.toolbar').find('button').click(function() {
+        var self = this,
+            opts = {
+                bgImg: $(this).data('img'),
+                areas: $(this).data('areas') || [],
+                elem: this,
+                callback: function(data) {
+                    $(self).data('areas', data);
+                }
+            };
+
+        new HotArea(opts);
+    });
+});
+</script>
+
+</html>

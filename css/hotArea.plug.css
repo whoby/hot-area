@@ -1,0 +1,154 @@
+.canvas-wrap {
+    padding: 22px 0 0 22px;
+    background: #414141;
+    position: relative;
+}
+
+.canvas-wrap .rule {
+    background: #303030;
+    color: #a6a6a6;
+    font-family: "Arial Narrow", "Helvetica Neue", Helvetica, Arial, Veranda, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    overflow: hidden;
+}
+
+.canvas-wrap .ruleV {
+    position: absolute;
+    width: 23px;
+    left: 0;
+    z-index: 9;
+    background: url(../img/rule_left_white.png) no-repeat;
+    height: 100%;
+}
+
+.canvas-wrap .ruleH {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    background: url(../img/rule_top_white.png) no-repeat;
+    height: 23px;
+}
+
+.canvas-wrap #canvas {
+    width: 950px;
+    cursor: crosshair;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.canvas-wrap .drag {
+    position: absolute;
+    border: 1px solid #0092fd;
+    background: #3bd4fc;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.canvas-wrap .drag .hide{
+    display: none;
+}
+
+.canvas-wrap .handle {
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    opacity: .5;
+    background-color: #fff;
+    border: 1px solid #25c3eb;
+}
+
+.NW,.NN,.NE {
+    top: -4px;
+}
+
+.NE,.EE,.SE {
+    right: -4px;
+}
+
+.SW,.SS,.SE {
+    bottom: -4px;
+}
+
+.NW,.WW,.SW {
+    left: -4px;
+}
+
+.SE,.NW {
+    cursor: nw-resize;
+}
+
+.SW,.NE {
+    cursor: ne-resize;
+}
+
+.NN,.SS {
+    cursor: n-resize;
+    left: 50%;
+    margin-left: -4px;
+}
+
+.EE,.WW {
+    cursor: e-resize;
+    top: 50%;
+    margin-top: -4px;
+}
+
+.canvas-wrap .layer-tip {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 14px;
+    color: #595757;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.canvas-wrap .layer-close {
+    background: url(../img/close.png) no-repeat;
+    width: 24px;
+    height: 23px;
+    cursor: pointer;
+    position: absolute;
+    top: -10px;
+    right: -8px;
+    z-index: 2;
+    display: none;
+}
+
+.edit-area {
+    font-size: 12px;
+    line-height: 35px;
+    font-family: 'Microsoft Yahei', Verdana, Arial;
+}
+
+.edit-area label {
+    width: 40px;
+    display: inline-block;
+}
+
+.edit-area .input-text {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #d9d4bf;
+    box-sizing: border-box;
+    color: #3d371f;
+    display: inline-block;
+    height: 26px;
+    line-height: 1;
+    outline: 0;
+    padding: 1px 8px;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+}
+
+.edit-area .short {
+    width: 50px;
+}
